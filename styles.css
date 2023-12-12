@@ -1,0 +1,50 @@
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --text-color: #333;
+  --font-family: Arial, sans-serif;
+  --base-padding: 20px;
+}
+
+
+body, h1, h2, h3, p, ul, ol {
+  margin: 0;
+  padding: 0;
+}
+
+
+header {
+  width: 100%;
+  background-color: #da0e0e; 
+  text-align: center; 
+  padding: 20px 0; 
+}
+
+
+.logo img {
+  max-width: 80px; 
+  height: auto; 
+  display: block; 
+  margin: 0 auto; 
+}
+
+
+main {
+  padding: 20px; 
+}
+
+section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 16px;
+}
+
