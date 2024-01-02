@@ -146,48 +146,4 @@ function createBranchBarChart(commitsData) {
         .yAxisLabel("Number of Commits");
 }
 
-function createBarChart(commitsData) {
-    // Use Crossfilter to enable filtering
-    var ndx = crossfilter(commitsData);
-
-    // Define dimension for the bar chart
-    var dateDim = ndx.dimension(function (d) { return d.date; });
-
-    // Filter out data with undefined or null dates and commits count
-    var filteredCommitsData = commitsData.filter(function(d) {
-        return d.date !== undefined && d.date !== null && d.commits !== undefined && d.commits !== null;
-    });
-
-    // Define group for the bar chart
-    var commitsGroup = dateDim.group().reduceSum(function(d) { return d.commits; });
-
-    // Set up the chart dimensions
-    var margin = { top: 20, right: 20, bottom: 60, left: 60 };
-    var width = 1200 - margin.left - margin.right;
-    var height = 600 - margin.top - margin.bottom;
-
-    // Create the bar chart
-    var barChart = dc.barChart("#commits_bar_chart");
-
-    barChart
-        .width(width)
-        .height(height)
-        .margins(margin)
-        .dimension(dateDim)
-        .group(commitsGroup)
-        .x(d3.scaleTime().domain([d3.min(filteredCommitsData, function(d) { return d.date; }), d3.max(filteredCommitsData, function(d) { return d.date; })]))
-        .xUnits(d3.timeDays) 
-        .elasticY(true)
-        .brushOn(true)
-        .renderHorizontalGridLines(true)
-        .renderVerticalGridLines(true)
-        .colors("steelblue")
-        .xAxisLabel("Date of Commits")
-        .yAxisLabel("Number of Commits");
-
-   
-}
-
-
-
 loadData();
