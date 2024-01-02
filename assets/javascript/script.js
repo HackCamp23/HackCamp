@@ -36,9 +36,9 @@ function loadData() {
                     return d.date !== undefined && d.date !== null;
                 });
             
-                createAuthorBarChart(commitsData);
+                createBarChart(data, languageIdToName);
                 createBranchBarChart(commitsData)
-                createBarChart(commitsData);
+                createAuthorBarChart(commitsData);
 
                 // Call render to display the charts
                 dc.renderAll();
