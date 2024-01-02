@@ -1,11 +1,38 @@
 import psycopg2
 import csv
-
 from psycopg2 import OperationalError
+
+def export_table_to_csv(table_name, cursor, csv_writer):
+    # Get column names for the current table
+    cursor.execute(f"SELECT column_name FROM information_schema.columns WHERE table_name = '{table_name}'")
+    column_names = [row[0] for row in cursor.fetchall()]
+
+    # Write header with column names
+    csv_writer.writerow(column_names)
+
+    # Retrieve data from the table
+    cursor.execute(f'SELECT * FROM {table_name}')
+
+    # Fetch all the results
+    data = cursor.fetchall()
+
+    # Write data to CSV
+    for row in data:
+        csv_writer.writerow(list(row))
+
+def export_tables_to_csv(tables, cursor):
+    for table in tables:
+        # Open CSV file for writing
+        with open(f'{table}.csv', 'w', newline='') as csv_file:
+            csv_writer = csv.writer(csv_file)
+
+            # Call a separate function to export each table
+            export_table_to_csv(table, cursor, csv_writer)
+
+        print(f'Export to {table}.csv successful!')
 
 def test_postgres_connection():
     try:
-        # Replace with your actual database connection details
         conn = psycopg2.connect(
             dbname='hc23_24_redocelot',
             user='hc23-24',
@@ -13,34 +40,14 @@ def test_postgres_connection():
             host='poseidon.salford.ac.uk',
             port='5432'
         )
-        
+
         cursor = conn.cursor()
 
-        #list of tables
-        tables = ['branches', 'commits', 'files', 'languages', 'licenses', 'repositories', 'repository_languages', 'users']
+        # tables to export
+        tables_to_export = ['branches', 'commits', 'files', 'languages', 'licenses', 'repositories', 'repository_languages', 'users']
 
-        #open CSV for writing
-        with open('redocelot.csv', 'w', newline='') as csv_file:
-            csv_writer = csv.writer(csv_file)
-
-            for table in tables:
-                # Get column names for the current table
-                cursor.execute(f"SELECT column_name FROM information_schema.columns WHERE table_name = '{table}'")
-                column_names = [row[0] for row in cursor.fetchall()]
-
-                # Write header with column names
-                csv_writer.writerow(['Table'] + column_names)
-
-                # Execute a query to retrieve data from the table
-                cursor.execute(f'SELECT * FROM {table}')
-
-                # Fetch all the results
-                data = cursor.fetchall()
-
-                # Write data to CSV
-                for row in data:
-                    csv_writer.writerow([table] + list(row))
-        print('Export to CSV successful!')
+        # Call a function to export tables
+        export_tables_to_csv(tables_to_export, cursor)
 
         cursor.close()
         conn.close()
@@ -48,6 +55,4 @@ def test_postgres_connection():
     except OperationalError as e:
         print(f"Error: {e}")
 
-        
-# Call the function to test the connection
 test_postgres_connection()

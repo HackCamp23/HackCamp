@@ -1,0 +1,235 @@
+id,sha,date,message,branch_id,author_id
+1,cb43062b25758555775660b119ac837ae62d1bac,2021-02-19 19:38:51,Setup Logger and print XML to log file,1,2
+2,cc7b5b3716f322795dab345226072cdb4bf55823,2021-02-19 18:47:32,Create and test new logger infrastructure,1,2
+3,526e8118ca90d61e1bd523af82d6f91c615e9003,2021-02-19 18:08:23,More commenting tidy-ups,1,2
+4,ed094986f3fa803addc2c2939bd8bf320524e9d0,2021-02-19 17:54:47,Tidy up comments relating to migration from Vector to ArrayList,1,2
+5,d08e26fe1c109a1a79ab323d13a7c9b2bff939b2,2021-02-19 17:53:02,Tidy-up commenting around migration to ArrayList (from vector),1,2
+6,b49e9c0321e98a89fc8bfe53844790509629e192,2021-02-19 17:49:27,More commenting tidy-up,1,2
+7,3f71b29359f069c00259c1ec22f19571e8e3f6b0,2021-02-19 17:46:27,Tidy-up commenting,1,2
+8,b43b5007d02333b6bb595a1b069392fe6d6e50a0,2021-02-19 17:42:41,Change visibility of abstract class constructors to protected,1,2
+9,ba7454e273533ef8f7f9e8cd895845071529c539,2021-02-19 17:34:42,Check return string for null,1,2
+10,e020b425126e5dfe8d0e7d2931f3217b0890c074,2021-02-19 17:26:52,Remove XML parser vulnerability to XXE attacks,1,2
+11,c7ba8132bae422e52d4c9172232e6a5c6330a86b,2021-02-19 17:25:59,Move StringWriter into try-catch block,1,2
+12,a0cc34f7ee8ac83081a0d492737c3cd8985d4266,2021-02-19 17:17:03,Move FileReader inside try block,1,2
+13,83f70b7fe0a3cda57c9e6d65f30fa7ed44c74980,2021-02-19 17:12:26,Close FileReader in finally clause,1,2
+14,bcf06201163d50505ab02bb4f88345b86a845b63,2021-02-19 17:07:33,"Create nested try-catch-fnally block for buffered reader and file input
+stream",1,2
+15,423239048cea19d66194e5234fd065d1917184aa,2021-02-19 16:58:00,Add try...catch block for bufferedreader,1,2
+16,33b44efe0a8360ff00313d03df052e59ecd0486f,2021-02-19 16:52:50,Avid closing null streams,1,2
+17,7787bfd803d05e0f6cab33c706ca5dde1d441537,2021-02-19 16:45:52,Insert file handling into Try... Catch block,1,2
+18,a107de725a00bd5025727564fbb574de7fb45527,2021-02-19 15:31:00,Add @Override to hashCode(),1,2
+19,0fc0f391d859b3da2d4726904a4d15ba4f4a54ca,2021-02-19 14:56:16,Add @Override annotation to equals(),1,2
+20,e1803578e5ce3b402c94e3710305dfc48b2a7398,2021-02-19 14:39:58,"Rename the equal() method to prevent any confusion with
+Object.equals(Object obj)",1,2
+21,3baef9e5476d95b382e23bbd860e06b419473bf6,2021-02-16 13:55:54,Fix sonar cude execution after changing package name,1,2
+22,e1d3318983bf930292335847d9898a1d6447ca97,2021-02-16 13:45:38,Disguise comment out source code,1,2
+23,02d01d3831a153f80976e171732fd41f6266533d,2021-02-16 13:34:22,Update sonar-project.properties,1,2
+24,8b689ce757255733301ef9cf4578e02161ee09bd,2021-02-15 19:44:19,Remove unused include,1,2
+25,73249dab476dc0c61e743f2ddbddbbcbc6d89295,2021-02-15 19:37:19,Rename XMLWriter package to xmlwriter for naming conventioon comliance,1,2
+26,c6e0435e42a0e549426d0d48c2945c4338e454b7,2021-02-15 19:31:44,Reverted to using vector in specific cases,1,2
+27,3f33f470701dac809f346f155c3c759bbc769caf,2021-02-15 15:32:43,Finishing migrating Vector to ArrayList classes,1,2
+28,9ddfadaacba07492031b983cadfac57e3ce8877c,2021-02-05 22:04:40,Refactor vector to ArrayList types,1,2
+29,9dba5b12ea9b329a897fb9d8db6a13a5fabf9814,2021-02-04 18:13:18,Tidy up a couple of comments,1,2
+30,688520d91ff3cf51661cf1181b50a747e98768d3,2021-02-04 16:01:36,Tidy up some comments,1,2
+31,420e933b60d0b94902ccadd9bdd8cc6ed9aa3d26,2021-02-04 15:59:43,Impove code quality by removing un-needed debug print statements,1,2
+32,dd607cc6cf5a42805ed02d3ce52aba68add1a72b,2021-02-04 15:54:38,"Constructors of an ""abstract"" class should not be declared ""public""",1,2
+33,7fdc42f310bd43e74770b09002b68cd3e4d0ac36,2021-02-04 15:44:24,Improve code quality by removing unused debug print statements,1,2
+34,cff8f808fcb6a6581d0ff20878b2aa2def4cc39f,2021-02-04 15:32:01,Remove spaces from within paths to source and binary files,1,2
+35,d4badc281ad7abd52fa11073a7ef22de2b02ce66,2021-02-04 15:29:19,A further attempt to fix paths to source and binary files,1,2
+36,b38e97dc9a8cd9d6c5369b90e16b75e64466fc67,2021-02-04 15:18:58,Fixing paths to source and binaries,1,2
+37,40239ba9635f2e5de9b1e2b923b75d6f0436a9ef,2021-02-04 15:08:10,Add path to java binaries,1,2
+38,9114b4fef84e64ce6425f204b515a3e379b9c995,2021-02-04 15:05:35,Add comiled classes to repo (for Sonar Cube analysis),1,2
+39,dfe23bcfcb0cf3b975f9c9b42ca4db648f5a4b63,2021-02-04 14:59:30,Fixed typo in comment,1,2
+40,6eef40c654c8ecbf5403ee993117670feb3270de,2021-02-04 14:48:41,"Update sonar-project.properties
+
+Another attempt to fix the file path for source code
+
+# Path is relative to the sonar-project.properties file. 
+sonar.sources=Cobol2XML/src/cobol",1,2
+41,d7d498f0167c241b0ab5034c931f7540a1d11e48,2021-02-04 14:40:53,"Update sonar-project.properties
+
+Another attempt to fix path to source...
+# Path is relative to the sonar-project.properties file. Replace ""\"" by ""/"" on Windows.
+sonar.sources=/Cobol2XML/src/cobol",1,2
+42,b726f94f205a17b4f4efa5a097461d1ebc930c58,2021-02-04 14:35:42,"Update sonar-project.properties
+
+Trying to fix path to source code...
+# Path is relative to the sonar-project.properties file. Replace ""\"" by ""/"" on Windows.
+sonar.sources=/github/workspace/Cobol2XML/Cobol2XML/src/cobol",1,2
+43,2096e7b90b9784395f57b80f928804d04bcb61bc,2021-02-04 14:30:32,"Update sonar-project.properties
+
+Added
+sonar.sources=.Cobol2XML/Cobol2XML/src/cobol
+#sonar.java.binaries=
+# Language
+sonar.language=java",1,2
+44,feed91f470b527d20a39e4dbcbef69ad09e66e66,2021-02-04 14:01:23,Create main.yml,1,2
+45,808c2cd736e9b62a4c6e62e6882667593ad1c46f,2021-02-04 13:56:02,Create sonar-project.properties,1,2
+46,6831a6f2a0776f01d615fc2c12630ec6a6eaf777,2019-03-09 16:00:19,"Revert to previous. Removed comment line parsing capability (into
+separate repository).",1,
+47,570499ffc97893bc8ce9d25319bdd35dad65e75f,2019-03-09 15:04:03,Finalise enhancements,1,
+48,73fc4d91b63874f473adfdc448094c20712a2811,2019-03-09 14:30:47,Solved: now full comment line included in XML output file,1,
+49,2b88881a1d872e3bd47e6ace8f550db62b7e5c85,2019-03-08 04:19:49,Output file produced when comment line is read from cobol source file,1,2
+50,52f1958f5dc72d78fc73ed3ba2f656a20f12a56a,2019-03-08 04:19:07,Merge branch 'master' of https://github.com/julianbass/Cobol2XML.git,1,2
+51,16fb72f0f8c20639ba8ec05b1e37a81fa909d77d,2019-03-08 04:09:23,"Added new parser feature to identify comment lines, starting with
+""***---""",1,2
+52,bb6b17a6097fa4b294a2034379d3af4a32180d5a,2019-02-26 15:52:43,"Merge pull request #2 from afzal97/master
+
+Merge pull request #1 from julianbass/master",1,2
+53,a54070c1c8b51cd9e2a5b7496a057b0565be2478,2019-02-26 15:34:37,Added more detialed cobol file called cobol.cbl,1,2
+54,4de5f30d1aeae4640027adf071a053b6d19fe92b,2019-02-12 20:12:08,"Merge pull request #1 from julianbass/master
+
+Updated readme",1,
+55,96ee58af8ce771aabc054674ac46efe43416a718,2019-02-07 17:44:07,Updated readme,1,2
+56,19d44159b9c59e9ccd9b6c6027e83d9637340395,2019-02-01 09:06:11,Restored ProgramID parsing functionality,1,
+57,94cef9f31c0829d0872ef10cf3e32013b21364a0,2019-02-01 08:40:55,git ignore input and output files,1,
+58,b65caae6552c6610abcbc65f9cb16a50a58b3d21,2019-02-01 06:50:17,Command line arguments for input and output filenames working,1,
+59,b9a25282eafedf53025fd4a13bc37f61d698b80b,2019-01-31 11:06:02,Minor documentation fixes,1,2
+60,3719a48f927ab6b4701c3e46e4128ba2d01cc9bc,2019-01-31 11:05:44,Parses DateWritten Construct,1,2
+61,5c730980f978559f9291ea9931831233a679c780,2019-01-30 16:38:34,"Restored tokeniser to recognise (only) single words. Simplified parsing
+of divisions into a single ""<divisionName> division"" assembler",1,2
+62,0e8447dd8ad319aacb1e67b526dc40280e59ac23,2019-01-29 14:27:20,Improvement to toString method of cobol class,1,2
+63,971b647d77819fec20da4cb67ba1994c6660e4ad,2019-01-29 14:16:24,Added some documentation about input source code file handling,1,2
+64,5209a7cb375277dcd576dd70b8160b2393e084c2,2019-01-29 14:11:53,"Use a command line input parameter to obtain filename
+
+First command line parameter must be path to cobol source file, such as
+""C:\\Users\\sgs442\\eclipse-workspace\\CobolParser1\\base.cbl""
+
+Or, when you know exactly where the repository is located and have the
+file in the right place, simply ""base.cbl""
+
+The quotation marks are required",1,2
+65,b0f8e6f544a6544a38e2230238cb80dd262940ec,2019-01-29 14:00:50,"Fixed issue with output filename. Passed output filename as a parameter
+from main() into XMLPayload.java",1,2
+66,061158160d47f9b0ad94fc1d1853f9a5a6bf263f,2019-01-29 12:49:20,"Initial draft Cobol2XML v0.1.0
+Recognition of some very basic Cobol language contructs",1,2
+67,d4ab504e699dc4b380ae46720bd48124713aae6e,2019-01-29 12:35:14,Initial commit,1,2
+68,06618283e0c37fe5e8f526c5aa4102b2962efa62,2023-11-26 12:59:47,Update README.md,3,2
+69,d7b409277db052bc63f9a075d1d86720c8fa04be,2023-10-15 18:14:18,Update README.md,3,2
+70,ba8e777e06c77443a1628c418529bc31251e7f68,2023-10-15 17:27:49,Update README.md,3,2
+71,4f314c445d3e8e4afced245a18d1da719ab38ad6,2023-10-15 17:27:21,Update README.md,3,2
+72,6f9617feb9f76c9067d8e5b7f4db2c6a40056e0e,2023-10-15 17:21:35,Update README.md,3,2
+73,65e4c265aad6e23ca47a1ae544358f2edd2242f6,2023-10-15 17:01:13,Initial commit,3,2
+74,0a9ce1d029a30792a033c3f9bb376e003c11e903,2021-03-21 06:32:14,Added ICSE Score ADR,2,2
+75,baa97b728cc53d05350b3f214960b814e8aa8642,2021-02-26 18:20:09,Minor edits,2,2
+76,d47a74a9fe15f583f9eacc6d2f4c14ce90e7a04f,2021-02-19 19:40:56,Remove unused imports,2,2
+77,cb43062b25758555775660b119ac837ae62d1bac,2021-02-19 19:38:51,Setup Logger and print XML to log file,2,2
+78,cc7b5b3716f322795dab345226072cdb4bf55823,2021-02-19 18:47:32,Create and test new logger infrastructure,2,2
+79,526e8118ca90d61e1bd523af82d6f91c615e9003,2021-02-19 18:08:23,More commenting tidy-ups,2,2
+80,ed094986f3fa803addc2c2939bd8bf320524e9d0,2021-02-19 17:54:47,Tidy up comments relating to migration from Vector to ArrayList,2,2
+81,d08e26fe1c109a1a79ab323d13a7c9b2bff939b2,2021-02-19 17:53:02,Tidy-up commenting around migration to ArrayList (from vector),2,2
+82,b49e9c0321e98a89fc8bfe53844790509629e192,2021-02-19 17:49:27,More commenting tidy-up,2,2
+83,3f71b29359f069c00259c1ec22f19571e8e3f6b0,2021-02-19 17:46:27,Tidy-up commenting,2,2
+84,b43b5007d02333b6bb595a1b069392fe6d6e50a0,2021-02-19 17:42:41,Change visibility of abstract class constructors to protected,2,2
+85,ba7454e273533ef8f7f9e8cd895845071529c539,2021-02-19 17:34:42,Check return string for null,2,2
+86,e020b425126e5dfe8d0e7d2931f3217b0890c074,2021-02-19 17:26:52,Remove XML parser vulnerability to XXE attacks,2,2
+87,c7ba8132bae422e52d4c9172232e6a5c6330a86b,2021-02-19 17:25:59,Move StringWriter into try-catch block,2,2
+88,a0cc34f7ee8ac83081a0d492737c3cd8985d4266,2021-02-19 17:17:03,Move FileReader inside try block,2,2
+89,83f70b7fe0a3cda57c9e6d65f30fa7ed44c74980,2021-02-19 17:12:26,Close FileReader in finally clause,2,2
+90,bcf06201163d50505ab02bb4f88345b86a845b63,2021-02-19 17:07:33,"Create nested try-catch-fnally block for buffered reader and file input
+stream",2,2
+91,423239048cea19d66194e5234fd065d1917184aa,2021-02-19 16:58:00,Add try...catch block for bufferedreader,2,2
+92,33b44efe0a8360ff00313d03df052e59ecd0486f,2021-02-19 16:52:50,Avid closing null streams,2,2
+93,7787bfd803d05e0f6cab33c706ca5dde1d441537,2021-02-19 16:45:52,Insert file handling into Try... Catch block,2,2
+94,a107de725a00bd5025727564fbb574de7fb45527,2021-02-19 15:31:00,Add @Override to hashCode(),2,2
+95,0fc0f391d859b3da2d4726904a4d15ba4f4a54ca,2021-02-19 14:56:16,Add @Override annotation to equals(),2,2
+96,e1803578e5ce3b402c94e3710305dfc48b2a7398,2021-02-19 14:39:58,"Rename the equal() method to prevent any confusion with
+Object.equals(Object obj)",2,2
+97,3baef9e5476d95b382e23bbd860e06b419473bf6,2021-02-16 13:55:54,Fix sonar cude execution after changing package name,2,2
+107,420e933b60d0b94902ccadd9bdd8cc6ed9aa3d26,2021-02-04 15:59:43,Impove code quality by removing un-needed debug print statements,2,2
+108,dd607cc6cf5a42805ed02d3ce52aba68add1a72b,2021-02-04 15:54:38,"Constructors of an ""abstract"" class should not be declared ""public""",2,2
+109,7fdc42f310bd43e74770b09002b68cd3e4d0ac36,2021-02-04 15:44:24,Improve code quality by removing unused debug print statements,2,2
+110,cff8f808fcb6a6581d0ff20878b2aa2def4cc39f,2021-02-04 15:32:01,Remove spaces from within paths to source and binary files,2,2
+111,d4badc281ad7abd52fa11073a7ef22de2b02ce66,2021-02-04 15:29:19,A further attempt to fix paths to source and binary files,2,2
+112,b38e97dc9a8cd9d6c5369b90e16b75e64466fc67,2021-02-04 15:18:58,Fixing paths to source and binaries,2,2
+113,40239ba9635f2e5de9b1e2b923b75d6f0436a9ef,2021-02-04 15:08:10,Add path to java binaries,2,2
+114,9114b4fef84e64ce6425f204b515a3e379b9c995,2021-02-04 15:05:35,Add comiled classes to repo (for Sonar Cube analysis),2,2
+115,dfe23bcfcb0cf3b975f9c9b42ca4db648f5a4b63,2021-02-04 14:59:30,Fixed typo in comment,2,2
+116,6eef40c654c8ecbf5403ee993117670feb3270de,2021-02-04 14:48:41,"Update sonar-project.properties
+
+Another attempt to fix the file path for source code
+
+# Path is relative to the sonar-project.properties file. 
+sonar.sources=Cobol2XML/src/cobol",2,2
+98,e1d3318983bf930292335847d9898a1d6447ca97,2021-02-16 13:45:38,Disguise comment out source code,2,2
+99,02d01d3831a153f80976e171732fd41f6266533d,2021-02-16 13:34:22,Update sonar-project.properties,2,2
+100,8b689ce757255733301ef9cf4578e02161ee09bd,2021-02-15 19:44:19,Remove unused include,2,2
+101,73249dab476dc0c61e743f2ddbddbbcbc6d89295,2021-02-15 19:37:19,Rename XMLWriter package to xmlwriter for naming conventioon comliance,2,2
+102,c6e0435e42a0e549426d0d48c2945c4338e454b7,2021-02-15 19:31:44,Reverted to using vector in specific cases,2,2
+103,3f33f470701dac809f346f155c3c759bbc769caf,2021-02-15 15:32:43,Finishing migrating Vector to ArrayList classes,2,2
+104,9ddfadaacba07492031b983cadfac57e3ce8877c,2021-02-05 22:04:40,Refactor vector to ArrayList types,2,2
+105,9dba5b12ea9b329a897fb9d8db6a13a5fabf9814,2021-02-04 18:13:18,Tidy up a couple of comments,2,2
+106,688520d91ff3cf51661cf1181b50a747e98768d3,2021-02-04 16:01:36,Tidy up some comments,2,2
+132,96ee58af8ce771aabc054674ac46efe43416a718,2019-02-07 17:44:07,Updated readme,2,2
+133,a40517204282c4290b5c689596f89c8a55c20fc0,2019-03-10 06:49:48,"Add constant name, value and line number to XML output file",4,
+134,19d44159b9c59e9ccd9b6c6027e83d9637340395,2019-02-01 09:06:11,Restored ProgramID parsing functionality,2,
+135,1a7b1290944a9396402fb5856a423e142797e0b8,2019-03-10 05:47:07,Parsing only (not writing XML) of constant values from Cobol source,4,
+136,94cef9f31c0829d0872ef10cf3e32013b21364a0,2019-02-01 08:40:55,git ignore input and output files,2,
+137,485b27f53532b4ce7e6b3d864bb31ba69b2520a2,2019-03-10 05:08:14,Update initial print message,4,
+138,b65caae6552c6610abcbc65f9cb16a50a58b3d21,2019-02-01 06:50:17,Command line arguments for input and output filenames working,2,
+139,759bfba9ce0744afd419a572d5ba194cb56a5353,2019-03-09 20:24:11,Create eclipse project for Cobol2XMLParseConstants,4,
+140,b9a25282eafedf53025fd4a13bc37f61d698b80b,2019-01-31 11:06:02,Minor documentation fixes,2,2
+141,0e96110e127dc544c36f8dda7b6c4d5612b7a41a,2019-03-09 19:41:46,Initial commit,4,2
+142,3719a48f927ab6b4701c3e46e4128ba2d01cc9bc,2019-01-31 11:05:44,Parses DateWritten Construct,2,2
+143,5c730980f978559f9291ea9931831233a679c780,2019-01-30 16:38:34,"Restored tokeniser to recognise (only) single words. Simplified parsing
+of divisions into a single ""<divisionName> division"" assembler",2,2
+144,0e8447dd8ad319aacb1e67b526dc40280e59ac23,2019-01-29 14:27:20,Improvement to toString method of cobol class,2,2
+145,971b647d77819fec20da4cb67ba1994c6660e4ad,2019-01-29 14:16:24,Added some documentation about input source code file handling,2,2
+146,5209a7cb375277dcd576dd70b8160b2393e084c2,2019-01-29 14:11:53,"Use a command line input parameter to obtain filename
+
+First command line parameter must be path to cobol source file, such as
+""C:\\Users\\sgs442\\eclipse-workspace\\CobolParser1\\base.cbl""
+
+Or, when you know exactly where the repository is located and have the
+file in the right place, simply ""base.cbl""
+
+The quotation marks are required",2,2
+147,b0f8e6f544a6544a38e2230238cb80dd262940ec,2019-01-29 14:00:50,"Fixed issue with output filename. Passed output filename as a parameter
+from main() into XMLPayload.java",2,2
+148,061158160d47f9b0ad94fc1d1853f9a5a6bf263f,2019-01-29 12:49:20,"Initial draft Cobol2XML v0.1.0
+Recognition of some very basic Cobol language contructs",2,2
+149,d4ab504e699dc4b380ae46720bd48124713aae6e,2019-01-29 12:35:14,Initial commit,2,2
+117,d7d498f0167c241b0ab5034c931f7540a1d11e48,2021-02-04 14:40:53,"Update sonar-project.properties
+
+Another attempt to fix path to source...
+# Path is relative to the sonar-project.properties file. Replace ""\"" by ""/"" on Windows.
+sonar.sources=/Cobol2XML/src/cobol",2,2
+118,b726f94f205a17b4f4efa5a097461d1ebc930c58,2021-02-04 14:35:42,"Update sonar-project.properties
+
+Trying to fix path to source code...
+# Path is relative to the sonar-project.properties file. Replace ""\"" by ""/"" on Windows.
+sonar.sources=/github/workspace/Cobol2XML/Cobol2XML/src/cobol",2,2
+119,2096e7b90b9784395f57b80f928804d04bcb61bc,2021-02-04 14:30:32,"Update sonar-project.properties
+
+Added
+sonar.sources=.Cobol2XML/Cobol2XML/src/cobol
+#sonar.java.binaries=
+# Language
+sonar.language=java",2,2
+120,feed91f470b527d20a39e4dbcbef69ad09e66e66,2021-02-04 14:01:23,Create main.yml,2,2
+121,808c2cd736e9b62a4c6e62e6882667593ad1c46f,2021-02-04 13:56:02,Create sonar-project.properties,2,2
+122,6831a6f2a0776f01d615fc2c12630ec6a6eaf777,2019-03-09 16:00:19,"Revert to previous. Removed comment line parsing capability (into
+separate repository).",2,
+123,570499ffc97893bc8ce9d25319bdd35dad65e75f,2019-03-09 15:04:03,Finalise enhancements,2,
+124,73fc4d91b63874f473adfdc448094c20712a2811,2019-03-09 14:30:47,Solved: now full comment line included in XML output file,2,
+125,2b88881a1d872e3bd47e6ace8f550db62b7e5c85,2019-03-08 04:19:49,Output file produced when comment line is read from cobol source file,2,2
+126,52f1958f5dc72d78fc73ed3ba2f656a20f12a56a,2019-03-08 04:19:07,Merge branch 'master' of https://github.com/julianbass/Cobol2XML.git,2,2
+127,16fb72f0f8c20639ba8ec05b1e37a81fa909d77d,2019-03-08 04:09:23,"Added new parser feature to identify comment lines, starting with
+""***---""",2,2
+128,bb6b17a6097fa4b294a2034379d3af4a32180d5a,2019-02-26 15:52:43,"Merge pull request #2 from afzal97/master
+
+Merge pull request #1 from julianbass/master",2,2
+129,a54070c1c8b51cd9e2a5b7496a057b0565be2478,2019-02-26 15:34:37,Added more detialed cobol file called cobol.cbl,2,2
+130,4de5f30d1aeae4640027adf071a053b6d19fe92b,2019-02-12 20:12:08,"Merge pull request #1 from julianbass/master
+
+Updated readme",2,
+131,02e532b9325bd92e8efa1fb7280a8b45f154499e,2019-03-10 07:22:21,changed line number variable from double to int,4,
+150,e966d2d9669d2d49bf95036804d0efebca6deb61,2023-09-03 18:23:19,Update the baraza database core files,5,
+151,714d30dae2b4a07388ed0a9a9536c87e338133e6,2023-09-03 18:08:19,Update the baraza database core files,5,
+152,d05b471488a5038431ea974670c9cd753dbee5f2,2023-09-03 10:11:03,Java 17 and tomcat 10.1 core upgrade,5,
+153,0e456924f5f706c69c4bbd6f3a9e7a8bc3439f42,2022-04-27 10:16:07,License update,5,
+154,4ce55139147a0a263d82da758210ad942a2c3630,2021-09-01 13:21:02,QA Updates,5,
+155,3d26852abe73381f07af44acd889d07ebf8bb7a4,2021-07-28 14:09:04,first commit,5,
+156,5f10b44e80b9ba48ce8078a4cc22bb66b7197328,2023-10-15 19:48:20,comit book example files,6,6
+157,391c9dee633519c684c6495437c440f803c01dd3,2023-06-28 18:36:46,initial installation experiments,6,6
+158,650656e831e794e02bd670617be78cf7373d93d8,2023-06-28 16:43:26,Initial commit,6,2
