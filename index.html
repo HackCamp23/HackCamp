@@ -28,12 +28,17 @@
         <article>
           <h2>Languages Used</h2>
           <p class="article-paragraph" id="short-paragraph">
-            There are no major surprises here, as a diverse range of languages is utilized, with HTML and Java being the most frequently used.
+            Observing the graph reveals a notable variance in the languages utilized across distinct repositories. 
+			There are a total of five repositories in the dataset but it seems, interesting,appears not to utilize any programming language.
+			Repo 174738528 uses only one language and repo 168152007 is using 3 languages, while repo 390373065 and repo 659829229 use 
+			12 and 13 different languages probably indicate that they are part of an incredibly vast and complex projects.
+			Hovering the cursor over the bars will reveal the various languages used by each repository in a dedicated div."
           </p>
         </article>
         <div class="container-grid">
           <div class="chart-container">
             <div id="languages_per_repositories_used"></div>
+			<div id="repo-info"></div>
           </div>
         </div>
       </section>
@@ -78,7 +83,8 @@
             different repositories. Repository 168152007 stands out with a total of 137 commits, 
             primarily originating from two distinct branches—logger and master. In contrast, 
             the remaining four repositories fall short of not even reaching 10 commits each, 
-            with the lowest being repository 659829229, which has only 3 commits.
+            with the lowest being repository 659829229, which has only 3 commits. 
+			definitely indicating a monolithic design approach.
         </p>
       </article>
       <div class="d-grid container-grid">
@@ -101,8 +107,32 @@
         </div>
       </div>
     </section>
-    
-    <div id="commits_bar_chart"></div>
+
+	<section class="section-container container">
+		<article>
+		  <h2>Number or Commits per Branch</h2>
+		  <p class="article-paragraph">
+			For this dataset, a scatter plot has been chosen as the most 
+			suitable visualization method to represent the data. 
+			The scatter plot effectively illustrates the dates on which the commits were made. 
+			Notably, the graph confirms that a single author is responsible for the majority of 
+			the commits, as shown in the above graphs.
+
+			Intriguingly, these commits were made in an incredibly short amount of time,
+			every few minutes from one to another, indicating an intensive work session on the same 
+			project for a few hours. 
+			Additionally, the commits without an assigned author follow similar patterns, 
+			showcasing a series of commits in a short time. 
+			The remaining commits are isolated and unrelated to the others, 
+			confirming a monolithic design approach for those projects.
+		  </p>
+		</article>
+		<div class="container-grid">
+		  <div class="chart-container">
+			<div id="scatter-plot"></div>
+		  </div>
+		</div>
+	  </section>
 
   </main>
 

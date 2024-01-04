@@ -1,20 +1,12 @@
-//function to load data from branches.csv
+
 function loadBranchesData() {
     return d3.csv('assets/csv/branches.csv');
 }
 
-//function to load data from commits.csv
 function loadCommitsData() {
-    return d3.csv('assets/csv/commits.csv', function (d) {
-        // Check if date is valid
-        if (d.date) {
-            // Parse the date string into a JavaScript Date object
-            d.date = new Date(d.date);
-        }
-
-        return d;
-    });
+    return d3.csv('assets/csv/commits.csv')
 }
+
 
 // Load data from CSV files
 function loadData() {
@@ -30,19 +22,22 @@ function loadData() {
 
             // Call to charts
             createBarChart(data, languageIdToName);
-            
-            loadCommitsData().then(function(commitsData) {
-                commitsData = commitsData.filter(function(d) {
-                    return d.date !== undefined && d.date !== null;
-                });
-            
+
+            // Load commits data
+            loadCommitsData().then(function (commitsData) {
+                // Additional charts or rendering if needed
                 createBarChart(data, languageIdToName);
-                createBranchBarChart(commitsData)
+                createBranchBarChart(commitsData);
                 createAuthorBarChart(commitsData);
+
+                // Create scatter plot after loading commits data
+                createScatterPlot(commitsData);
 
                 // Call render to display the charts
                 dc.renderAll();
-            })
+            }).catch(function (error) {
+                console.error("Error loading commits data:", error);
+            });
         });
     });
 }
@@ -52,11 +47,24 @@ function createBarChart(data, languageIdToName) {
     var ndx = crossfilter(data);
 
     // Define dimensions and groups
+    var repositoryDim = ndx.dimension(function (d) { return d.repository_id; });
     var languageDim = ndx.dimension(function (d) { return languageIdToName[d.language_id]; });
-    var languageGroup = languageDim.group().reduceCount();
+    var repositoryLanguageGroup = repositoryDim.group().reduce(
+        function (p, v) {
+            p[languageIdToName[v.language_id]] = (p[languageIdToName[v.language_id]] || 0) + 1;
+            return p;
+        },
+        function (p, v) {
+            p[languageIdToName[v.language_id]] = (p[languageIdToName[v.language_id]] || 0) - 1;
+            return p;
+        },
+        function () {
+            return {};
+        }
+    );
 
     // Set up the chart dimensions
-    var margin = { top: 20, right: 20, bottom: 60, left: 60 }; 
+    var margin = { top: 20, right: 20, bottom: 60, left: 60 };
     var width = 1200 - margin.left - margin.right;
     var height = 600 - margin.top - margin.bottom;
 
@@ -67,18 +75,45 @@ function createBarChart(data, languageIdToName) {
         .width(width)
         .height(height)
         .margins(margin)
-        .dimension(languageDim)
-        .group(languageGroup)
-        .x(d3.scaleBand().domain(languageDim.group().all().map(function (d) { return d.key; }))) // Set domain based on language names
+        .dimension(repositoryDim)
+        .group(repositoryLanguageGroup)
+        .keyAccessor(function (d) { return d.key; })
+        .valueAccessor(function (d) {
+            var total = 0;
+            for (var lang in d.value) {
+                if (d.value.hasOwnProperty(lang)) { 
+                    total += d.value[lang];
+                }
+            }
+            return total;
+        })
+        .stack(repositoryLanguageGroup, function (d) { return d.value; })
+        .x(d3.scaleBand().domain(repositoryDim.group().all().map(function (d) { return d.key; })))
         .xUnits(dc.units.ordinal)
         .elasticY(true)
         .brushOn(true)
         .renderHorizontalGridLines(true)
         .renderVerticalGridLines(true)
         .colors("steelblue")
-        .xAxisLabel("Programming Languages")
-        .yAxisLabel("Number of Repositories");
+        .xAxisLabel("Repositories")
+        .yAxisLabel("Number of Languages Used")
+        .on("renderlet", function (chart) {
+            chart.selectAll("rect.bar")
+                .on("mouseover", function (event, d) {
+                    // Display repository information on hover
+                    if (d.data.key && d.data.value) {
+                        var languages = Object.keys(d.data.value).join(", ");
+                        d3.select("#repo-info").text("Repo ID: " + d.data.key + ", Languages: " + languages);
+                    }
+                })
+                .on("mouseout", function () {
+                    // Clear repository information on mouseout
+                    d3.select("#repo-info").text("");
+                });
+        });
 }
+
+
 
 function createAuthorBarChart(commitsData) {
     // Use Crossfilter to enable filtering
@@ -102,7 +137,7 @@ function createAuthorBarChart(commitsData) {
         .margins(margin)
         .dimension(authorDim)
         .group(authorGroup)
-        .x(d3.scaleBand().domain(authorDim.group().all().map(function (d) { return d.key; }))) // Set domain based on author IDs
+        .x(d3.scaleBand().domain(authorDim.group().all().map(function (d) { return d.key; })))
         .xUnits(dc.units.ordinal)
         .elasticY(true)
         .brushOn(true)
@@ -123,7 +158,7 @@ function createBranchBarChart(commitsData) {
 
     // Set up the chart dimensions
     var margin = { top: 20, right: 20, bottom: 60, left: 60 }; 
-    var width = 1200 - margin.left - margin.right;
+    var width = 1600 - margin.left - margin.right;
     var height = 600 - margin.top - margin.bottom;
 
     // Create the bar chart for branches
@@ -135,7 +170,7 @@ function createBranchBarChart(commitsData) {
         .margins(margin)
         .dimension(branchDim)
         .group(branchGroup)
-        .x(d3.scaleBand().domain(branchDim.group().all().map(function (d) { return d.key; }))) // Set domain based on branch IDs
+        .x(d3.scaleBand().domain(branchDim.group().all().map(function (d) { return d.key; }))) 
         .xUnits(dc.units.ordinal)
         .elasticY(true)
         .brushOn(true)
@@ -145,5 +180,98 @@ function createBranchBarChart(commitsData) {
         .xAxisLabel("Branches")
         .yAxisLabel("Number of Commits");
 }
+  
+function createScatterPlot(commitsData) {
+    // Set up the chart dimensions
+    var margin = { top: 30, right: 120, bottom: 70, left: 120 };
+    var width = 1800 - margin.left - margin.right;
+    var height = 1000 - margin.top - margin.bottom;
+
+    // Create SVG container
+    var svg = d3.select("#scatter-plot")
+        .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    // Create scales for x and y axes
+    var xMinDate = d3.min(commitsData, function (d) { return new Date(d.date); });
+    var xMaxDate = d3.max(commitsData, function (d) { return new Date(d.date); });
+
+    // Add a buffer zone to the x-axis domain
+    xMinDate.setDate(xMinDate.getDate() - 100);
+    xMaxDate.setDate(xMaxDate.getDate() + 7);
+
+    var xScale = d3.scaleTime()
+        .domain([xMinDate, xMaxDate])
+        .range([0, width]);
+
+    var yScale = d3.scaleLinear()
+        .domain([0, d3.max(commitsData, function (d) { return +d.id; })])
+        .range([height, 0]);
+
+    // Create x-axis
+    svg.append("g")
+        .attr("transform", "translate(0," + height + ")")
+        .call(d3.axisBottom(xScale).ticks(30));
+
+    svg.append("text")
+        .attr("x", width / 2)
+        .attr("y", height + margin.bottom - 10)
+        .style("text-anchor", "middle")
+        .text("Date");
+
+    // Create y-axis
+    svg.append("g")
+        .call(d3.axisLeft(yScale).ticks(40));
+
+    svg.append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", -margin.left)
+        .attr("x", -height / 2)
+        .attr("dy", "1em")
+        .style("text-anchor", "middle")
+        .text("Commit ID");
+
+    // Create circles for each data point
+    svg.selectAll("circle")
+        .data(commitsData)
+        .enter().append("circle")
+        .attr("cx", function (d) { return xScale(new Date(d.date)); })
+        .attr("cy", function (d) { return yScale(+d.id); })
+        .attr("r", 8)
+        .style("fill", "steelblue")
+        .on("mouseover", function (event, d) {
+            // Show data on mouseover directly on the circle
+            d3.select(this)
+                .transition()
+                .duration(200)
+                .attr("r", 8); // Increase circle size on mouseover
+
+            // Display data as text near the circle
+            svg.append("text")
+                .attr("class", "data-label")
+                .attr("x", xScale(new Date(d.date)))
+                .attr("y", yScale(+d.id) - 15) // Adjusted y position
+                .text("Author ID: " + d.author_id + ", Date: " + d.date) // Include both Author ID and Date
+                .style("text-anchor", "middle");
+        })
+        .on("mouseout", function () {
+            // Hide data and restore circle size on mouseout
+            d3.select(this)
+                .transition()
+                .duration(500)
+                .attr("r", 2); // Restore circle size
+
+            // Remove data label on mouseout
+            svg.select(".data-label").remove();
+        });
+}
+
+
+
+
 
 loadData();
+

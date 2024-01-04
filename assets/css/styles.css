@@ -69,7 +69,7 @@ p {
 }
 
 .section-container {
-  margin: 5rem auto 0;
+  margin: 10rem auto ;
 }
 
 .article-paragraph {
@@ -116,4 +116,14 @@ p {
   margin-bottom: 0.5rem;
   display: inline-block;
   vertical-align: middle;
+}
+
+#scatter-plot {
+  text-align: center;
+}
+
+@media screen and (max-width: 2000px) {
+  .container-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
