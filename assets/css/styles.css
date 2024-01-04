@@ -6,38 +6,58 @@
   --base-padding: 20px;
 }
 
-
-body, h1, h2, h3, p, ul, ol {
-  margin: 0;
-  padding: 0;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+html {
+    height: 100%;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--primary-background-color);
+    letter-spacing: 1px;
+    line-height: 1.5rem;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 160rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.d-grid {
+  display: grid;
+}
 
 header {
   width: 100%;
-  background-color: #da0e0e; 
-  text-align: center; 
-  padding: 20px 0; 
+  background-color: #da0e0e;
+  text-align: center;
+  padding: 20px 0;
 }
-
 
 .logo img {
-  max-width: 80px; 
-  height: auto; 
-  display: block; 
-  margin: 0 auto; 
+  max-width: 80px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
-
 main {
-  padding: 20px; 
+  padding: 20px;
 }
 
 section {
   text-align: center;
   margin-bottom: 20px;
 }
-
 
 h1 {
   font-size: 24px;
@@ -48,3 +68,52 @@ p {
   font-size: 16px;
 }
 
+.section-container {
+  margin: 5rem auto 0;
+}
+
+.article-paragraph {
+  position: relative;
+  text-align: left;
+  padding: 1rem 15rem;
+}
+
+#short-paragraph {
+    text-align: center;
+}
+
+
+.container-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.chart-container {
+  margin: 6rem auto 0;
+  grid-column: span 2;
+}
+
+.legend {
+  text-align: left;
+  padding: 1rem;
+}
+
+.legend-item {
+  padding-top: 10rem;
+  margin-bottom: 5px;
+}
+
+/* Style for the color square */
+.legend-color {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: steelblue;
+  margin-right: 5px;
+}
+
+/* Style for the text next to the color square */
+.legend-text {
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  vertical-align: middle;
+}
